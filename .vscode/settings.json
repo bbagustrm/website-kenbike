@@ -1,0 +1,10 @@
+{
+    "tailwindCSS.includeLanguages": {
+        "php": "PHP",
+        "javascript": "javascript",
+        "html": "HTML"
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+    }
+}

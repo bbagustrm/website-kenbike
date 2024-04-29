@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+@layer components{
+    .font-highlight{
+        @apply font-jakarta text-4xl font-bold tracking-wide text-text leading-none
+    }
+    .font-title{
+        @apply font-jakarta text-2xl font-medium text-text leading-none
+    }
+    .font-subtitle{
+        @apply font-jakarta text-lg font-semibold text-text leading-normal
+    }
+    .font-text{
+        @apply font-jakarta text-sm font-normal text-text leading-normal
+    }
+    .font-text-bold{
+        @apply font-jakarta text-sm font-bold text-text leading-normal
+    }
+    .font-caption{
+        @apply font-jakarta text-xs font-normal text-zinc-950 leading-normal
+    }
+    .font-button{
+        @apply font-jakarta text-sm font-normal text-zinc-950 leading-none
+    }
+}
