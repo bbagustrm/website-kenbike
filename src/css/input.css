@@ -7,18 +7,21 @@
 
 @layer components{
     .font-highlight{
-        @apply font-jakarta text-4xl font-bold tracking-wide text-text leading-none
+        @apply font-jakarta text-4xl font-bold tracking-wide text-text
     }
     .font-title{
-        @apply font-jakarta text-2xl font-medium text-text leading-none
+        @apply font-jakarta text-3xl font-bold text-text leading-none
     }
     .font-subtitle{
         @apply font-jakarta text-lg font-semibold text-text leading-normal
     }
+    .font-titlesmall{
+        @apply font-jakarta text-xl font-bold text-text leading-normal
+    }
     .font-text{
         @apply font-jakarta text-sm font-normal text-text leading-normal
     }
-    .font-text-bold{
+    .font-textbold{
         @apply font-jakarta text-sm font-bold text-text leading-normal
     }
     .font-caption{
