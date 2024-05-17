@@ -2,11 +2,15 @@ var jumlahBarangElement = document.getElementById('jumlah_barang')
 var tambahButton = document.getElementById('tambah')
 var kurangButton = document.getElementById('kurang')
 var idProduk = document.getElementById('ini_id').innerText
-var cartLink = document.getElementById('cart_link');
+var cartLink = document.getElementById('cart_link')
+
+var subtotalElement = document.getElementById('subtotalElement')
+
 
 var warna = document.querySelectorAll('.warna')
 var preview_text = document.querySelectorAll('.preview_text')
 
+var subtotal= parseInt(subtotalElement.innerText)
 var jumlahBarang = parseInt(jumlahBarangElement.innerText)
 var warna_produk = 'silver'
 
@@ -40,6 +44,7 @@ warna.forEach(function(w){
 tambahButton.addEventListener('click', function() {
     jumlahBarang++;
     jumlahBarangElement.innerText = jumlahBarang;
+    subtotalElement.innerText = `${jumlahBarang * subtotal}.000`
     updateBarang();
 });
 
@@ -47,6 +52,7 @@ kurangButton.addEventListener('click', function() {
     if(jumlahBarang > 1){
         jumlahBarang--;
         jumlahBarangElement.innerText = jumlahBarang;
+        subtotalElement.innerText = `${jumlahBarang * subtotal}.000`
         updateBarang();
     }
 });

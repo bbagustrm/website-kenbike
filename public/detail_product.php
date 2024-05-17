@@ -97,8 +97,8 @@ while ($row = mysqli_fetch_array($query_gambar)) {
                     <button id="tambah">+</button>
                 </div>
                 <div class="w-full flex gap-4 items-center justify-between"> 
-                    <p>Subtotal</p>
-                    <h3 class="font-titlesmall"><?= number_format($result->harga_produk, 0, ',', '.') ?></h3>
+                    <p class="font-text">Subtotal</p>
+                    <h3 id="subtotalElement" class="font-titlesmall"><?= number_format($result->harga_produk, 0, ',', '.') ?></h3>
                 </div>
                 <p id="ini_id" class="hidden"><?= $id ?></p>
                 <a id="cart_link" href="proses/do_tambah_cart.php?id=<?= $id ?>&jumlah=0&warna=silver" class="w-full border-2 border-textun hover:bg-slate-100 flex justify-center px-6 py-3">Add to Cart</a>
