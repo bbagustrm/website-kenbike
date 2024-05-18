@@ -3,6 +3,25 @@
 
 include "database.php";
 
+if(isset($_POST["pesan"])){
+    $nama_pembeli = $_POST["nama_pembeli"];
+    $email_pembeli = $_POST["email_pembeli"];
+    $nohp_pembeli = $_POST["nohp_pembeli"];
+    $alamat_pembeli = $_POST["alamat_pembeli"];
+
+
+    $_SESSION["pembeli"] = [
+        "nama_pembeli" => $nama_pembeli,
+        "email_pembeli" => $email_pembeli,
+        "nohp_pembeli" => $nohp_pembeli,
+        "alamat_pembeli" => $alamat_pembeli
+    ];
+
+header("location:./proses/do_tambah_transaksi.php");
+
+}
+
+
 ?>
 
 
@@ -22,16 +41,16 @@ include "database.php";
     <div class="container px-4 flex flex-col mx-auto my-6">
         <p class="font-subtitle py-4">Checkout</p>
         <hr class="border-b-[1px] border-b-textun ">
-        <form class="w-full flex justify-between gap-12 my-9" onsubmit="sendMessage()">
+        <form class="w-full flex justify-between gap-12 my-9" action="form.php" method="POST" onsubmit="sendMessage()">
             <div class="flex-1 flex flex-col gap-4">
                 <label for="nama_pembeli" class="font-subtitle">Nama Lengkap</label>
-                <input type="text" id="nama_pembeli" placeholder="masukan nama anda.." class="w-full px-4 py-2 border-[1px] border-textun">
+                <input type="text" id="nama_pembeli" name="nama_pembeli" placeholder="masukan nama anda.." class="w-full px-4 py-2 border-[1px] border-textun">
                 <label for="email_pembeli" class="font-subtitle">Email</label>
-                <input type="text" id="email_pembeli" placeholder="masukan email anda.." class="w-full px-4 py-2 border-[1px] border-textun">
+                <input type="text" id="email_pembeli" name="email_pembeli" placeholder="masukan email anda.." class="w-full px-4 py-2 border-[1px] border-textun">
                 <label for="nohp_pembeli" class="font-subtitle">No hp</label>
-                <input type="text" id="nohp_pembeli" placeholder="masukan no hp anda.." class="w-[300px] px-4 py-2 border-[1px] border-textun">
+                <input type="text" id="nohp_pembeli" name="nohp_pembeli" placeholder="masukan no hp anda.." class="w-[300px] px-4 py-2 border-[1px] border-textun">
                 <label for="alamat_pembeli" class="font-subtitle">Alamat</label>
-                <textarea id="alamat_pembeli" rows="7" class="w-full px-4 py-2 border-[1px] border-textun" placeholder="masukan alamat anda.."></textarea>
+                <textarea id="alamat_pembeli" name="alamat_pembeli" rows="7" class="w-full px-4 py-2 border-[1px] border-textun" placeholder="masukan alamat anda.."></textarea>
             </div>
 
             <div class="flex-none w-[360px] flex flex-col gap-4 ">
@@ -83,7 +102,7 @@ include "database.php";
                     <p class="font-text">Total</p>
                     <h3 id="subtotalElement" class="font-titlesmall"><?= number_format($total_semua, 0, ',', '.') ?></h3>
                 </div>
-                <button type="submit" class="w-full bg-primary hover:bg-text flex justify-center px-6 py-4">
+                <button type="submit" name="pesan" class="w-full bg-primary hover:bg-text flex justify-center px-6 py-4">
                     <p class="font-text text-background">Checkout</p>
                 </button>
 

@@ -22,7 +22,7 @@ Nama Lengkap : ${nama_pembeli.value}
 Email : ${email_pembeli.value}
 NoHp : ${nohp_pembeli.value}
 Alamat :
-${alamat_pembeli.value}
+${alamat_pembeli.value}\n
 Dengan rincian Pemesanan:
 ${rincianProduk}
 `
